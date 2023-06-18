@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+       ./nano.nix
     ];
 
   # Bootloader.
@@ -85,6 +86,7 @@
     #media-session.enable = true;
   };
 
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -103,6 +105,25 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    binutils
+    curl
+    desktop-file-utils
+    file
+    git
+    home-manager
+    killall
+    man-pages
+    mergerfs
+    mergerfs-tools
+    nano
+    pciutils
+    rsync
+    unzip
+    usbutils
+    v4l-utils
+    wget
+    xdg-utils
+    micro
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
