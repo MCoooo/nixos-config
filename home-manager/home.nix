@@ -73,11 +73,6 @@
       enableAliases = true;
       icons = true;
     };
-    git = {
-      enable = true;
-      package = pkgs.gitFull;
-      config.credential.helper = "libsecret";
-    };
     gpg.enable = true;
     home-manager.enable = true;
     info.enable = true;
