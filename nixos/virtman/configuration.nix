@@ -21,6 +21,9 @@
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only
+  
+  # enable flakes
+   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -74,6 +77,8 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     initialPassword = "password";
     packages = with pkgs; [
+      git
+      home-manager
        firefox
   #     tree
     ];
@@ -97,6 +102,9 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.sddm.enableGnomeKeyring = true;
+
   # services.openssh.enable = true;
 
   # Open ports in the firewall.

@@ -3,6 +3,8 @@
 {
   imports = [
     ./apps/zsh.nix
+    ./apps/micro.nix
+    ./apps/git.nix
   ];
   home.username = "dave";
   home.homeDirectory = "/home/dave";
@@ -77,18 +79,6 @@
     home-manager.enable = true;
     info.enable = true;
     jq.enable = true;
-    micro = {
-      enable = true;
-      settings = {
-        colorcolumn = 80;
-        colorscheme = "simple";
-        diffgutter = true;
-        rmtrailingws = true;
-        savecursor = true;
-        saveundo = true;
-        scrollbar = true;
-      };
-    };
     powerline-go = {
       enable = true;
       settings = {
